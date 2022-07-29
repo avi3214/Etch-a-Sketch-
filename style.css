@@ -1,0 +1,53 @@
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2em;
+  font-family: "Mochiy Pop One", sans-serif;
+  background-color: #708090;
+  overflow: scroll;
+}
+
+.title {
+  color: #eee;
+  font-size: 42px;
+}
+
+.options {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 4em;
+}
+
+button {
+  border: black;
+  border-radius: 8px;
+  background: #eee;
+  font-size: 18px;
+  padding: 16px 32px;
+  font-family: "Mochiy Pop One", sans-serif;
+  color: #eee;
+  background-color: #3cb371;
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  width: 800px;
+  height: 700px;
+  border: 1px solid red;
+  border-radius: 32px;
+  background-color: red;
+}
+
+.content {
+  width: 700px;
+  height: 470px;
+  margin: 5em 3em;
+  background-color: #eee;
+  border-radius: 16px;
+}

@@ -48,6 +48,13 @@ button {
   width: 700px;
   height: 470px;
   margin: 5em 3em;
-  background-color: #eee;
+  background-color: #e5e4e2;
   border-radius: 16px;
+  display: grid;
+  --size: 0;
+  grid-template-rows: repeat(var(--size), 1fr);
+  grid-template-columns: repeat(var(--size), 1fr);
+}
+
+.square {
 }

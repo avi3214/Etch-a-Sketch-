@@ -14,12 +14,17 @@ function createGrid() {
     "Choose grid size: 16 (16x16), 32 (32x32), or 64 (64x64))"
   );
 
+  const content = document.querySelector(".content");
+  content.style.setProperty("--size", sizeSelection);
+
   for (let i = 0; i < sizeSelection * sizeSelection; i++) {
     const grid = document.createElement("grid-div");
     grid.classList.add("square");
+
+    grid.addEventListener("mouseover", function () {
+      grid.style.backgroundColor = "black";
+    });
+
     content.appendChild(grid);
-    grid.setAttribute("width", "100px");
   }
 }
-
-function defineGrid() {}

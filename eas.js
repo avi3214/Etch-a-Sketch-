@@ -3,10 +3,10 @@ const sizeBtn = document.querySelector(".btn-size");
 const clearBtn = document.querySelector(".btn-clear");
 
 // event listener to set size of grid
-const gridSize = sizeBtn.addEventListener("click", createGrid);
+sizeBtn.addEventListener("click", createGrid);
 
 // event listener to clear the grid
-clearBtn.addEventListener("click", () => {});
+clearBtn.addEventListener("click", clearGrid);
 
 // function to create grid
 function createGrid() {
@@ -18,7 +18,7 @@ function createGrid() {
   content.style.setProperty("--size", sizeSelection);
 
   for (let i = 0; i < sizeSelection * sizeSelection; i++) {
-    const grid = document.createElement("grid-div");
+    const grid = document.createElement("div");
     grid.classList.add("square");
 
     grid.addEventListener("mouseover", function () {
@@ -26,5 +26,17 @@ function createGrid() {
     });
 
     content.appendChild(grid);
+  }
+}
+
+function resetGrid() {}
+
+function clearGrid() {
+  let squareDivs = content.getElementsByTagName("div");
+  console.log("LENGTH IS " + squareDivs.length);
+  console.log(squareDivs);
+
+  for (let i = 0; i < squareDivs.length; i++) {
+    squareDivs[i].style.backgroundColor = "#d3d3d3";
   }
 }

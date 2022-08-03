@@ -12,7 +12,7 @@ body {
 
 .title {
   color: #eee;
-  font-size: 42px;
+  font-size: 5em;
 }
 
 .options {
@@ -21,14 +21,15 @@ body {
   align-items: center;
   justify-content: center;
   gap: 4em;
+  margin-bottom: 2em;
 }
 
 button {
   border: black;
-  border-radius: 8px;
+  border-radius: 16px;
   background: #eee;
-  font-size: 18px;
-  padding: 16px 32px;
+  font-size: 24px;
+  padding: 2em 3em;
   font-family: "Mochiy Pop One", sans-serif;
   color: #eee;
   background-color: #3cb371;
@@ -37,16 +38,18 @@ button {
 .modal {
   display: flex;
   flex-direction: column;
-  width: 800px;
-  height: 700px;
+  width: 1000px;
+  height: 900px;
   border: 1px solid red;
   border-radius: 32px;
   background-color: red;
+  padding: 25px 20px 15px 20px;
+  margin: 0px 100px 20px 100px;
 }
 
 .content {
-  width: 700px;
-  height: 470px;
+  width: auto;
+  height: 80%;
   margin: 5em 3em;
   background-color: #d3d3d3;
   border-radius: 16px;
@@ -56,5 +59,31 @@ button {
   grid-template-columns: repeat(var(--size), 1fr);
 }
 
-.square {
+.modal h3 {
+  color: #eee;
+  font-size: 24px;
+}
+
+.dials {
+  display: flex;
+  flex-direction: row;
+  gap: 15em;
+}
+
+.circleBase {
+  border-radius: 50%;
+}
+
+.circle1 {
+  width: 150px;
+  height: 150px;
+  background: #eee;
+  border: 1px solid #eee;
+}
+
+.circle2 {
+  width: 150px;
+  height: 150px;
+  background: #eee;
+  border: 1px solid #eee;
 }

@@ -10,41 +10,9 @@ sizeBtn.addEventListener("click", createGrid);
 // event listener to clear the grid
 clearBtn.addEventListener("click", clearGrid);
 resetBtn.addEventListener("click", resetGrid);
+rgbBtn.addEventListener("click", toggleRGBMode);
 
-// let currentClick = 0;
-// let total = 3;
-// let gridSize = 0;
-
-// function game() {
-//   while (currentClick < total) {
-//     sizeBtn.addEventListener("click", () => {
-//       currentClick += 1;
-//     });
-//     // resetGrid();
-//     switch (currentClick) {
-//       case 1:
-//         sizeBtn.innerText = "16x16";
-//         gridSize = 16;
-//         createGrid(gridSize);
-//         console.log(currentClick);
-//         break;
-//       case 2:
-//         sizeBtn.innerText = "32x32";
-//         gridSize = 32;
-//         createGrid(gridSize);
-//         break;
-//       case 3:
-//         sizeBtn.innerText = "64x64";
-//         gridSize = 64;
-//         createGrid(gridSize);
-//         break;
-//       default:
-//         sizeBtn.innerText = "16x16";
-//         gridSize = 16;
-//         createGrid(gridSize);
-//     }
-//   }
-// }
+let isRGBMode = false;
 
 // function to create grid
 function createGrid() {
@@ -59,23 +27,25 @@ function createGrid() {
     const grid = document.createElement("div");
     // grid.classList.add("square");
 
-    if (rgbBtn.clicked === true) {
-      grid.addEventListener("mouseover", function () {
+    grid.addEventListener("mouseover", function () {
+      if (isRGBMode) {
         grid.style.backgroundColor = generateColor();
-      });
-      content.appendChild(grid);
-    } else {
-      grid.addEventListener("mouseover", function () {
+      } else {
         grid.style.backgroundColor = "black";
-      });
-      content.appendChild(grid);
-    }
+      }
+    });
+    content.appendChild(grid);
   }
+}
+
+function toggleRGBMode() {
+  isRGBMode = !isRGBMode;
 }
 
 function resetGrid() {
   const content = document.querySelector(".content");
   while (content.firstChild) content.removeChild(content.firstChild);
+  isRGBMode = false;
 }
 
 function clearGrid() {
